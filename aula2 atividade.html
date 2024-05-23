@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 2</title>
+  </head>
+  <body>
+    <p>
+      Criarum algoritmo em JS que solicita do usuário seu nome e o ano de
+      nascimento,com as informações calcule sua idade e exiba na tela no corpo
+      do html.Personalizando a seguinte mensagem
+    <br>Olá Lorena,você tem 80 anos.
+    </p>
+    <hr>
+    <script>
+        let nome= prompt("Insira seu nome");
+        let ano =prompt("Insira seu ano de nascimento");
+
+        let anonascimento=2024 -parseInt(ano);
+
+        document.write(`Olá Lorena,você tem ${anonascimento}`);
+    </script>
+  </body>
+</html>
