@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aula 4</title>
+</head>
+<body>
+    <h1>
+       <p> crie um programa em JS que avalie a nota e retorne representando em letras.A > 90, B>=80,C >=70, D =>60, E<=59</p>
+    </h1>
+    <script>
+        let nota=parseFloat(prompt("Digite uma nota entre 0 a 100")); 
+
+        if(nota >= 90){
+          document.write(`A`);
+        }else if(nota >=80){
+            document.write(`B`);
+        }else if(nota >=70){
+            document.write(`C`);
+        }else if(nota >=60){
+            document.write(`D`);
+        }else if(nota <=59){
+            document.write(`E `);
+        }else{
+            document.write(`nota inválida`);
+        }
+    </script>
+</body>
+</html>

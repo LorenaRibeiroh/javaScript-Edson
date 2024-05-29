@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aula 3</title>
+  </head>
+  <body>
+    <p>
+      Criar um algoritmo em JS que solicita do usuário seu nome e o ano de
+      nascimento.Com as informações calcule sua idade e xiba na tela do corpo do
+      HTML a mensagem:"Olá lorena você tem 80 anos e pode dirigir",caso
+      contrário não pode dirigir.
+      <hr>
+    </p>
+    <script>
+      let nome = prompt("Qual o seu nome:");
+      let ano = parseInt(prompt("Qual seu ano de nascimento?"));
+
+      let idade = 2024 - ano;
+
+      if (idade >= 18) {
+        document.write(`Olá ${nome} voce tem ${idade} e  pode dirigir`);
+      } else {
+        document.write(`Olá ${nome} voce tem ${idade} e não pode dirigir`);
+      }
+    </script>
+  </body>
+</html>

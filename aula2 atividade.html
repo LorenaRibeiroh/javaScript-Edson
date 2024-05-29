@@ -14,12 +14,22 @@
     </p>
     <hr>
     <script>
-        let nome= prompt("Insira seu nome");
-        let ano =prompt("Insira seu ano de nascimento");
+        let nome;
+        let ano;
 
-        let anonascimento=2024 -parseInt(ano);
+        do{
+         nome= prompt("Insira seu nome");
+         ano =prompt("Insira seu ano de nascimento");
 
-        document.write(`Olá Lorena,você tem ${anonascimento}`);
+        if(isNaN(ano) || ano<0){
+             alert("invalido");
+
+        }else{
+            let anonascimento=2024 - parseInt(ano);
+        }
+    }while(isNaN(ano) || ano<0 );
+
+      document.write(`Olá Lorena,você tem ${anonascimento}`);
     </script>
   </body>
 </html>

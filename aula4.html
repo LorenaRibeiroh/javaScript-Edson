@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aula 4</title>
+</head>
+<body>
+    <h1>Estrutura Conicional</h1>
+    <p>crie um programa em JS que retorna a saudação com base na hora informada pelo usuário.Retorne se é "bom dia","boa tarde" e "boa noite"</p>
+    <script>
+       let hora =parseInt(prompt("Que horas são sem os minutos:"));
+
+       if(hora<= 11){
+         document.write(`Bom dia!`);
+       }else if(hora <=17){
+        document.write(`Boa tarde!`)
+       }else if(hora<=23){
+        document.write(`Boa noite!`);
+       }else{
+        document.write(`Hora  inválida`);
+       }
+    </script>
+</body>
+</html>

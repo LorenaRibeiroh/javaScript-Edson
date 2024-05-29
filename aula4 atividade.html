@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1=parseFloat(prompt("Digite um numero"));
+        let num2=parseFloat(prompt("Digite um numero"));
+        let conta=prompt("Digite 1(soma),2(subtração),3(multiplicação),4(divisão)");
+
+        if(conta == "1"){
+               let resultado=num1 + num2;
+              document.write(`Seu calculo é: ${resultado}`);
+        }else if(conta == "2"){
+            let resultado=num1-num2;
+            document.write(`Seu calculo é: ${resultado}`);
+        }else if(conta =="3"){
+            let resultado=num1*num2;
+            document.write(`Seu calculo é: ${resultado}`);
+        }else if(conta =="4"){
+            let resultado=num1/num2;
+            document.write(`Seu calculo é: ${resultado}`);
+        }
+
+    </script>
+</body>
+</html>

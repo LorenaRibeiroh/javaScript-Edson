@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>aula 3</title>
+  </head>
+  <body>
+    <h1>Estrutura Condicioal em JS</h1>
+    <p>
+      solicitar do usuário duas notas e calcular a média,see a nota for maior ou
+      igual a sete o aqluno é aprovao,se não ele é reprovado.
+    </p>
+    <script>
+        let nota1=parseFloat(prompt("Digite sua primeira nota:"));
+        let nota2=parseFloat(prompt("Digite sua segunda nota:"));
+
+        let media=(nota1 + nota2)/2;
+
+        console.log("A média é:" + media);
+        
+        if(media >= 7){
+            document.write(`O aluno foi aprovado:${media}`);
+        }else{
+            document.write(`O aluno foi reprovado:${media}`);
+
+        }
+    </script>
+  </body>
+</html>
