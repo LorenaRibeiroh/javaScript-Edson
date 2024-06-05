@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laço de repetição</title>
+</head>
+<body>
+    <h3>Eestrutura Laço de Repetição em js</h3>
+    <p>Imprima uma sequencia númerica de 1 a 10</p>
+    <hr>
+    <script>
+       for(var a=1;a <=10;a++){
+         document.write(`${a}`);
+       }
+       document.write(`<hr>`)
+       var quant=parseFloat(prompt('me diga a quanidade de senha'))
+       var cont = 0
+
+       while(cont <= quant){
+        document.write(`${cont}+`)
+        cont++;
+       }
+       document.write(`<hr>`)
+
+       var cont=0;
+       do{
+        document.write(`${cont}+`)
+       cont++
+       }while(cont <= quant);
+      
+    
+    </script>
+</body>
+</html>
