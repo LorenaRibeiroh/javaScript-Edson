@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativ1</title>
+</head>
+<body>
+    <p>Crie um programa que solicita ao usuário um número e conta quantos números pares existem de 1 até esse número.</p>
+    <script>
+     var num=Number(prompt('me diga um numero'))
+     var soma=0;
+     for(var cont=1;cont <=num;cont++){
+        if(cont %2 == 0){ //como queria contar as posição voce precisa pegar o contador
+          soma++;
+        }
+    }
+     if(soma >0){
+     document.write(`Temos ${soma} numeros pares`)
+     }else{
+        document.write(`Não tem`)
+     }
+    </script>
+    </body>
+
+
+     
+</html>
