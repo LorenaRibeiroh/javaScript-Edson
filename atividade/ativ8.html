@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>aula 6 js</title>
+</head>
+<body>
+    <button id="btnAlerta">Mostrar Alerta</button>
+    <p id="textoParagrafo">Texto Inicial</p>
+    <button id="textoBotao">Alerta texto</button>
+ 
+    <script>
+        const btnAlerta = document.getElementById("btnAlerta");
+        const textoParagrafo = document.getElementById("textoParagrafo");
+        const textoBotao = document.getElementById("textoBotao");
+
+        btnAlerta.addEventListener('click',function(){
+        alert("Botão de alerta clicado!");
+        })
+        textoParagrafo.addEventListener('click',function(){
+          textoParagrafo.innerText='Mudou de texto o paragrafo';
+
+        })
+        textoParagrafo.addEventListener('mouseover',function(){
+            textoParagrafo.innerHTML='oiiiii';
+        })
+        
+        textoParagrafo.addEventListener('mouseout',function(){
+            textoParagrafo.innerHTML='tudo bem?';
+        })
+
+
+        textoBotao.addEventListener('click',function(){
+          textoBotao.innerHTML="Texto alterado com sucesso";
+          textoBotao.style.background='blue'
+        })
+        textoBotao.addEventListener('mouseover', function () {
+        textoBotao.innerHTML = "Mouse sobre o botão";
+        textoBotao.style.background = 'yellow';
+    });
+
+    textoBotao.addEventListener('mouseout', function () {
+        textoBotao.innerHTML = "Mouse fora do botão";
+        textoBotao.style.background = 'green';
+    });
+    </script>
+</body>
+</html>
