@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>aula 7 js</title>
+</head>
+<body>
+    <button id="btnAlerta">Mostrar Alerta</button>
+    <p id="textoParagrafo">Texto Inicial</p>
+    <button id="textoBotao">Alerta texto</button>
+    <hr>
+    <div id="Cordiv" style="width: 100px; height: 100px; background-color: blue;"></div>
+    <div id="adicionarParágrafo">adicionar Parágrafo</div>
+    <button id="togglebotao">mostrar/esconder</button>
+    <button id="resetar">Resetar</button>
+ 
+    <script>
+        const btnAlerta = document.getElementById("btnAlerta");
+        const textoParagrafo = document.getElementById("textoParagrafo");
+        const textoBotao = document.getElementById("textoBotao");
+        const Cordiv = document.getElementById('Cordiv');
+        const adicionarParágrafo = document.getElementById("adicionarParágrafo")
+        const togglebotao = document.getElementById('togglebotao');
+        const resetar = document.getElementById('resetar');
+      
+        btnAlerta.addEventListener('click',function(){
+        alert('CAI FORA')
+        })
+
+        Cordiv.addEventListener('click',function(){
+       Cordiv.style.background='red';
+        })
+        
+        Cordiv.addEventListener('click',function(){
+        alert("Botão de alerta clicado!");
+        })
+        textoParagrafo.addEventListener('click',function(){
+          textoParagrafo.innerText='Mudou de texto o paragrafo';
+
+        })
+        textoParagrafo.addEventListener('mouseover',function(){
+            textoParagrafo.innerHTML='oiiiii';
+        })
+        
+        textoParagrafo.addEventListener('mouseout',function(){
+            textoParagrafo.innerHTML='tudo bem?';
+        })
+
+
+        textoBotao.addEventListener('click',function(){
+          textoBotao.innerHTML="texto alterado com sucesso";
+          textoBotao.style.background='blue'
+        })
+        textoBotao.addEventListener('mouseenter', function () {
+        textoBotao.innerHTML = "Mouse sobre o botão";
+        textoBotao.style.background = 'yellow';
+    });
+
+    textoBotao.addEventListener('mouseout', function () {
+        textoBotao.innerHTML = "Mouse fora do botão";
+        textoBotao.style.background = 'green';
+    });
+    adicionarParágrafo.addEventListener("click", function(){
+            const paragrafo = document.createElement("p")
+            paragrafo.innerHTML = "novo parágrafo adicionado"
+            document.body.appendChild(paragrafo)
+        });
+        togglebotao.addEventListener('click',function(){
+        if(Cordiv.style.display === 'none'){
+            Cordiv.style.display ='block';
+        }else(Cordiv.style.display = 'none')
+        });
+        resetar.addEventListener('click',function(){
+          textoParagrafo.innerHTML = 'texto inical';
+          textoParagrafo.innerHTML = 'alterar texto';
+          Cordiv.style.background='blue';
+
+          const  paragrafoextra= document.querySelectorAll('p');
+        console.log(paragrafoextra)
+        paragrafoextra.forEach((p,index) =>{      //index elemento que esta percorrendo
+          if(index >= 1){
+            p.remove()
+          }
+
+        }) ;
+    }) ;    
+        //paragrafoextra.forEach(function(p, index){
+       // if(index > 1){
+          //  p.remove()
+      //  }
+       // })
+
+    </script>
+</body>
+</html>
