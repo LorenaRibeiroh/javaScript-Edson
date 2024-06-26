@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <style>
+        input[type="Text"],
+        input[type="E-mail"],
+        input[type="Number"],
+        input[type="password"] {
+          width: 250px;  
+        }
+      </style>
+      <h1>Consulta de CEP</h1>
+    <form action="" id="form" class="form" method="post">
+        <label for="Nome">Nome:</label>
+        <input type="Text" id="Nome" name="Nome" required><br><br>
+        <label for="E-mail">Email:</label>
+        <input type="E-mail" id="E-mail" name="E-mail" required><br><br>
+        <label for="Senha">Senha:</label>
+        <input type="Password" id="Senha" name="Senha">
+    </form>
+        <fieldset>
+            <legend>Informações de Endereço</legend>
+            <form id="form1" class="form1">
+                <label for="CEP">CEP:</label>
+                <Input type="Number" id="CEP" name="CEP" required><br><br>
+                <label for="Logradouro">Logradouro:</label>
+                <input type="Text" id="Logradouro" name="Logradouro" required><br><br>
+                <label for="Bairro">Bairro:</label>
+                <input type="Text" id="Bairro" name="Bairro" required><br><br>
+                <label for="Cidade">Cidade:</label>
+                <input type="Text" id="Cidade" name="Cidade" required><br><br>
+                <label for="UF">UF:</label>
+                <input type="Text" id="UF" name="UF" required><br><br>
+            </form>
+        </fieldset>
+        <script src="buscacep.js"></script>
+</body>
+</html>
