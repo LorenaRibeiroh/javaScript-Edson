@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Revisão</title>
+    <style>
+        #boxresultado{
+            border:1px solid #000000;
+            height: auto;
+            margin-bottom: 20px;
+            background: #ededed;
+        }
+    </style>
+</head>
+<body>
+    <h1>aula de Revisão JS</h1>
+    <div id="boxresultado">
+
+    </div>
+    <script>
+
+        function imprimirResultado(mensagem){
+            
+        const boxresultado = document.getElementById("boxresultado")
+        boxresultado.innerHTML += mensagem + "<hr>";
+        }
+        let num1=10;
+        let num2=20;
+
+        let resultado=num1+num2;
+
+        console.log("O resultado é:"+ resultado);
+        document.write("o resultado é:"+ resultado);
+        
+        imprimirResultado("O resultado é:" + resultado) // o imprimirResultado recebe o valor do resultado e chama a funçaõ dele que acrescenta escrita e hr
+
+        //verificar se um numero é par ou ímpar
+
+        let numero = 10;
+        if(numero % 2 ==0){
+            imprimirResultado("O numero " + numero+" é par!");
+        }else{
+            imprimirResultado("O numero " + numero + " é impar");
+        }
+        //contar de 1 a 5 usando loop de repetição
+
+        for(let i=1;i <= 5;i++){
+            imprimirResultado(i);
+        }
+
+        let i=1;
+        while(i <=5){
+            imprimirResultado(i);
+            i++;
+        }
+
+        //crie uma função que verifique se uma pessoa pode votar
+        function podeVotar(idade){
+            if(idade >=16){
+                return "voce pode votar!";
+            }else{ //eu poderia muito bem não precisar colocar else
+                return "voce não pode votar";
+            }
+            let idade = 15;
+            imprimirResultado(podeVotar(idade))
+
+        }
+         //calculos simples (adição,subtração,multiplicaçaõ,divisão)
+
+
+         let nunx = 10;
+         let nuny = 15;
+
+         imprimirResultado("Adição" + (nunx+nuny));
+         imprimirResultado("Subtração" + (nunx-nuny));
+         imprimirResultado("Multiplicação" + (nunx*nuny));
+         imprimirResultado("Divisão" + (nunx/nuny));
+
+         //verificar faixa de idade criança,adolescente,adulto e idoso
+
+         let idadepessoa = 18;
+
+         if(idadePessoa < 10){
+            imprimirResultado("A pessoa é uma criança");
+         }else if(idadePessoa >= 10 && idadepessoa <20){
+            imprimirResultado("A pessoas é um adolescente");  
+         }else if(idadePessoa >=20 && idadePessoa < 60){
+            imprimirResultado("A pessoa é um adulto");
+         }else{
+            imprimirResultado("A pessoa é um idoso");
+         }
+    </script>
+</body>
+</html>
