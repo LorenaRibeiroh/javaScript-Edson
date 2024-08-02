@@ -1,0 +1,33 @@
+#main{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+#PrevisãoTempo{
+    background-color: rgb(124, 175, 223);
+    border: 1px solid white;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.103);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+#PrevisãoTempo h2{
+    text-align: center;
+}
+input:focus{
+   outline: 2px solid yellow;
+   box-shadow: 5px 10px 15px rgb(0, 0, 0);
+   text-align: center;
+}
+button{
+   background-color: rgb(124, 175, 223);
+   color: black;
+   border-radius: 20px;
+}
+button:focus{
+    outline: 2px solid yellow;
+    box-shadow: 5px 10px 15px rgb(0, 0, 0);
+}
+h1{
+    text-shadow: 2px 2px 4px yellow;
+}
