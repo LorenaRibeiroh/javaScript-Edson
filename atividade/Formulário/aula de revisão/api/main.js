@@ -5,8 +5,8 @@ function BuscarCidade() {
     const horasé= document.getElementById('horas');
     const TemperaturasCaixa = document.getElementById('temperaturas');
     const TemperaturaImagem = document.getElementById('temperaturasimagens');
-
     const horaImagem = document.getElementById('hora-imagem');
+    const weatherImage = document.getElementById('weatherImage');
    
 
     // Faz a requisição à API do OpenWeatherMap
@@ -53,13 +53,15 @@ function BuscarCidade() {
 
             //mostrar horas e imagem
 
-            const HoraAtual =new Date().toLocaleTimeString();
+            const HoraAtual =new Date();
 
-            horasé.textContent = HoraAtual;
+            const horas = HoraAtual.getHours();
 
-            if (HoraAtual >= 6 && HoraAtual < 12) {
+            horasé.textContent = HoraAtual.toLocaleTimeString();
+
+            if (horas >= 6 && horas < 12){
                 horaImagem.src = './img/manha.jpg';
-              } else if (HoraAtual >= 12 && HoraAtual < 18) {
+              } else if (horas >= 12 && horas < 18) {
                 horaImagem.src = './img/tarde.jpg';
               } else {
                 horaImagem.src = './img/noite.jpg';
@@ -82,39 +84,28 @@ function BuscarCidade() {
             // Atualiza o elemento HTML com os dados do clima
             PrevisãoTempo.innerHTML = dadosClima;
 
-            
+            //atualiza a thumb
 
-            // Chama a função para atualizar a imagem do clima
-            imagem(data.weather[0].description);
+
+            const condição = data.weather[0].main.toLowerCase();
+
+            const imagens = {
+                clear: 'ceulimpo',
+                clouds: 'nublado',
+                rain: 'chuvoso',
+                snow: 'neve',
+              };
+
+            weatherImage.src = `./img/${condição}.jpg`;
+            weatherImage.style.display = 'block';
+            video.style.display = 'none';
+
+           
         })
         .catch(error => {
             PrevisãoTempo.innerHTML = `<p>Ocorreu um erro: ${error.message}</p>`;
         });
     }
-        function imagem(descricao) {
-            const img = document.getElementById('imagem');
-        
-            if (!descricao) {
-                console.error('Erro: Dados climáticos não encontrados.');
-                return;
-            }
-        
-            const descricaoClima = descricao.toLowerCase();
-        
-            if (descricaoClima.includes('clear')) {
-                img.src = './img/ceulimpo.jpg';
-            } else if (descricaoClima.includes('few clouds') || descricaoClima.includes('scattered clouds')) {
-                img.src = './img/algumasnuvens.jpg';
-            } else if (descricaoClima.includes('rain')) {
-                img.src = './img/chuvoso.jpg';
-            } else if (descricaoClima.includes('snow')) {
-                img.src = './img/neve.jpg';
-            } else if (descricaoClima.includes('clouds')) {
-                img.src = './img/nublado.jpg';
-            } else {
-                img.src = './img/padrao.jpg';
-            }
-}
      
 
 

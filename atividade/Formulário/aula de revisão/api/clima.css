@@ -49,10 +49,8 @@ h1{
     left: 50%;
    
 }
-#imagem{
-    background-image: url('./img/padrao.jpg');
-    background-size: cover;
-    background-position: center;
+#video{
+    object-fit: cover;
     /*background-color: gray;*/
     width: 100%;
     height: 200px;
@@ -98,7 +96,7 @@ legend{
     display: inline-block;
     max-width: 1500px;
     min-width: 280px;
-    width: 50%;
+    width: 1200px;
     background: rgba(0, 0, 0, 0.418);
     height: 200px;
     border: 1px solid black;
@@ -106,6 +104,7 @@ legend{
     text-align: center;
     position: relative;
     margin-left: 10px;
+   
 }
 #horas{
    position: absolute;

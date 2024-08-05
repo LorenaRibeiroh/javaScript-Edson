@@ -8,15 +8,17 @@
 </head>
 <body>
     <div id="main">
-        <div id="imagem">
-            <div id="image">
+        <div class="image">
+            <video autoplay muted loop id="video">
+                <source src="./img/climas.mp4" type="video/mp4">
                 <img id="weatherIcon" alt="">
-            </div>
+            </video>
+            <img id="weatherImage" alt="">
         </div>
     <fieldset>
         <section class="caixa1">
            <div id="temperaturas"></div>
-           <img id="temperaturasimagens"></img>
+           <img id="temperaturasimagens"> 
         </section>
         <section class="caixa2">
           <div id="horas"></div>
