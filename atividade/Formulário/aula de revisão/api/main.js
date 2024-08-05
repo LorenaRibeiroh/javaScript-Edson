@@ -90,16 +90,17 @@ function BuscarCidade() {
             const condição = data.weather[0].main.toLowerCase();
 
             const imagens = {
-                clear: 'ceulimpo',
+                clear: 'limpo',
                 clouds: 'nublado',
                 rain: 'chuvoso',
                 snow: 'neve',
               };
 
-            weatherImage.src = `./img/${condição}.jpg`;
-            weatherImage.style.display = 'block';
-            video.style.display = 'none';
-
+              if (imagens.hasOwnProperty(condição)) {
+                weatherImage.src = `./img/${condição}.jpg`;
+                weatherImage.style.display = 'block';
+                video.style.display = 'none';
+              }
            
         })
         .catch(error => {
