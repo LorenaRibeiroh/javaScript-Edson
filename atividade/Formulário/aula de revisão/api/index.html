@@ -8,16 +8,34 @@
 </head>
 <body>
     <div id="main">
-    <img src="./img/PREVISAO-DO-TEMPO-METROPOLE-FM.jpg" width="100%" height="200px" alt="Logo">
+        <div id="imagem">
+            <div id="image">
+                <img id="weatherIcon" alt="">
+            </div>
+        </div>
     <fieldset>
+        <section class="caixa1">
+           <div id="temperaturas"></div>
+           <img id="temperaturasimagens"></img>
+        </section>
+        <section class="caixa2">
+          <div id="horas"></div>
+          <img id="hora-imagem">
+        </section>
     <h1>COLOQUE O NOME DA SUA CIDADE:</h1>
         <legend><strong>Informações de Previsão de Tempo</strong></legend>
         <input type="text" id="NomeCidade">
         <button onclick="BuscarCidade()">Buscar</button>
 
     <div id="PrevisãoTempo">
-       <h2>Dados metereológicos atuais:</h2>
-      
+        <p><strong>Nome da cidade:</strong></p> 
+        <p><strong>Hora atual:</strong></p>
+        <p><strong>Horário do nascer do sol:</strong></p>
+        <p><strong>Hora do pôr do sol:</strong></p>
+        <p><strong>Temperatura:</strong></p>
+        <p><strong>Precipitação da chuva:</strong></p>
+        <p><strong>Condição Climática:</strong></p>
+        <p><strong>Descrição:</strong></p>  
     </div>
     </div>
     <script src="main.js"></script>

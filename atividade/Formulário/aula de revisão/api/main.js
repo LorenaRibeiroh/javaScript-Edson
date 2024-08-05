@@ -1,41 +1,120 @@
-function BuscarCidade(){
-    const NomeCidade =
-    document.getElementById('NomeCidade').value.toLocalelowerCase();
-    const PrevisãoTempo =
-    document.getElementById('PrevisãoTempo');
-    
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${NomeCidade}&appid=03780a870aad79f9414ea58e5e786b9e&units=metric&lang=pt_br`)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Erro ao buscar o lugar!");
-        }
-        return response.json();
-    })
-    .then(data =>{
-        const dadosClima =`
-        <p>strong>Nome da cidade:</strong>${NomeCidade}</p>
-        <p><strong>Hora atual:</strong>${current.date}</p>
-        <p><strong>Horário do nascer do sol:</strong>${current.sunrise}</p>
-        <p><strong>Hora do pôr do sol</strong>${current.sunset}</p>
-        <p><strong>Temperatura:</strong>${current.temp}</p>
-        <p><strong>Temperatura(responsável pela percepção humana do clima):</strong>${current.feels_like}</p>
-        <p><strong>Pressão atmosférica no nível do mar:</strong>${current.pressure}</p>
-        <p><strong>Umidade:</strong>${current.humidity}</p>
-        <p><strong>Temperatura atmosférica (variando de acordo com a pressão e a umidade) abaixo da qual as gotas de água começam a condensar e o orvalho pode se formar:</strong>${current.dew_point}</p>
-        <p><strong>Nebulosidade:</strong>${current.clouds}</p>
-        <p><strong>Índice UV atual:</strong>${current.uvi}</p>
-        <p><strong>Visibilidade média:</strong>${current.visibility}</p>
-        <p><strong>Velocidade do vento:</strong>${current.wind_speed}</p>
-        <p><strong>Rajada de vento:</strong>${current.wind_gust}</p>
-        <p><strong>Direção do vento:</strong>${current.wind_deg}</p>
-        <p><strong>Precipitação da chuva:</strong>${current.rain.h}</p>
-        <p><strong>Condição Climática:</strong>${current.weather.main}</p>
-        <p><strong>Descrição: </strong>${current.weather.description}</p>
-        <p><strong>Imagem:</strong>${current.weather.icon}</p> `;
+function BuscarCidade() {
+    // Obtém o nome da cidade digitado pelo usuário
+    const NomeCidade = document.getElementById('NomeCidade').value.toLowerCase();
+    const PrevisãoTempo = document.getElementById('PrevisãoTempo');
+    const horasé= document.getElementById('horas');
+    const TemperaturasCaixa = document.getElementById('temperaturas');
+    const TemperaturaImagem = document.getElementById('temperaturasimagens');
 
-    PrevisãoTempo.innerHTML = dadosClima;    
-    })
-    .catch(error =>{
-       PrevisãoTempo.innerHTML =`<p>${error.message}</p>`
-    });
+    const horaImagem = document.getElementById('hora-imagem');
+   
+
+    // Faz a requisição à API do OpenWeatherMap
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${NomeCidade}&appid=03780a870aad79f9414ea58e5e786b9e&units=metric&lang=pt_br`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro ao buscar o lugar!");
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Converte timestamps para data legível
+            const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
+            const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString();
+
+            // Constrói a URL da imagem do ícone do tempo
+            const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+            // Calcula a precipitação (se houver dados de chuva)
+            const precipitation = data.rain ? data.rain['1h'] : 0;
+
+            // Atualiza o ícone do tempo
+            const weatherIcon = document.getElementById('weatherIcon');
+            weatherIcon.src = iconUrl;
+
+            //mostrar temperatura na tela e imagens
+            const temperatura = data.main.temp;
+
+            TemperaturasCaixa.textContent = temperatura + '°C';
+
+            if(temperatura <= 10){
+               TemperaturaImagem.src ='./img/muitofrio.jpg';
+            }else if(temperatura >=10 && temperatura < 15){
+                TemperaturaImagem.src='./img/frio.jpg';
+            }else if(temperatura >=15 &&temperatura <25){
+                TemperaturaImagem.src='./img/confortavel.jpg';
+            }else if(temperatura >= 25 && temperatura < 30){
+                TemperaturaImagem.src ='./img/quente.jpg';
+            }else if(temperatura > 30){
+                TemperaturaImagem.src='./img/muitoquente.jpg';
+
+               
+            }
+
+            //mostrar horas e imagem
+
+            const HoraAtual =new Date().toLocaleTimeString();
+
+            horasé.textContent = HoraAtual;
+
+            if (HoraAtual >= 6 && HoraAtual < 12) {
+                horaImagem.src = './img/manha.jpg';
+              } else if (HoraAtual >= 12 && HoraAtual < 18) {
+                horaImagem.src = './img/tarde.jpg';
+              } else {
+                horaImagem.src = './img/noite.jpg';
+              }
+             
+
+            // Cria a string com os dados do clima
+            const dadosClima = `
+                <p><strong>Nome da cidade:</strong> ${data.name}</p>
+                <p><strong>Hora atual:</strong> ${new Date().toLocaleTimeString()}</p>
+                <p><strong>Horário do nascer do sol:</strong> ${sunrise}</p>
+                <p><strong>Hora do pôr do sol:</strong> ${sunset}</p>
+                <p><strong>Temperatura:</strong> ${data.main.temp} °C</p>
+                <p><strong>Precipitação da chuva:</strong> ${precipitation} mm</p>
+                <p><strong>Condição Climática:</strong> ${data.weather[0].main}</p>
+                <p><strong>Descrição:</strong> ${data.weather[0].description}</p>
+                 <img src="${iconUrl}" alt="Ícone do tempo">
+            `;
+
+            // Atualiza o elemento HTML com os dados do clima
+            PrevisãoTempo.innerHTML = dadosClima;
+
+            
+
+            // Chama a função para atualizar a imagem do clima
+            imagem(data.weather[0].description);
+        })
+        .catch(error => {
+            PrevisãoTempo.innerHTML = `<p>Ocorreu um erro: ${error.message}</p>`;
+        });
+    }
+        function imagem(descricao) {
+            const img = document.getElementById('imagem');
+        
+            if (!descricao) {
+                console.error('Erro: Dados climáticos não encontrados.');
+                return;
+            }
+        
+            const descricaoClima = descricao.toLowerCase();
+        
+            if (descricaoClima.includes('clear')) {
+                img.src = './img/ceulimpo.jpg';
+            } else if (descricaoClima.includes('few clouds') || descricaoClima.includes('scattered clouds')) {
+                img.src = './img/algumasnuvens.jpg';
+            } else if (descricaoClima.includes('rain')) {
+                img.src = './img/chuvoso.jpg';
+            } else if (descricaoClima.includes('snow')) {
+                img.src = './img/neve.jpg';
+            } else if (descricaoClima.includes('clouds')) {
+                img.src = './img/nublado.jpg';
+            } else {
+                img.src = './img/padrao.jpg';
+            }
 }
+     
+
+
