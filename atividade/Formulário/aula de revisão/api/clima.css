@@ -148,3 +148,8 @@ legend{
     position: absolute
      /* Garante que a imagem esteja acima de outros elementos */  
 }
+@media screen and (max-width:1920px){
+    .caixa2{
+        width: 1200px;
+    }
+}
