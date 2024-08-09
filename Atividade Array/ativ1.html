@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #boxresultado{
+            margin: auto;
+            width: 500px;
+            height: auto;
+            text-align: center;
+            border-radius: 20px;
+            border: 1px solid blue;
+            background: rgb(115, 115, 196);
+            color: black;
+            padding-top: 30px;
+            padding-bottom: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <p>
+        <ol>
+            <li>Crie um array chamado numeros com os valores: 1, 2, 3, 4, 5. Em seguida,
+                imprima o numero 4 no console.</li>
+                <li> Crie um array chamado numeros com os valores: 3, 8, 12, 7, 10, 15. Use o método forEach para contar quantos números pares existem no array e mostre o total de números pares no console.</li>
+                <li>Crie um array chamado numeros com os valores: 2, 4, 6, 8. Use o método map para criar um novo array onde cada número é elevado ao quadrado. Mostre o novo array no console.
+                </li>
+                <li>Crie um array chamado nomes com os valores: 'Alice', 'Bruno', 'Carla'. Use o método map para criar um novo array onde cada nome é transformado em uma frase do tipo "Olá, [nome]!". Mostre o novo array no console.
+                </li>
+                <li>Crie um array chamado numeros com os valores: 5, 12, 18, 7, 9, 14. Use o método filter para criar um novo array contendo apenas os números maiores que 10. Mostre o novo array no console.
+                </li>
+        </ol>
+    
+      <div id="boxresultado"></div>
+    </p>
+    <script>
+
+        function imprimirResultado(mensagem){
+            const boxresultado=document.getElementById('boxresultado');
+            boxresultado.innerHTML += mensagem + "<br>";
+        }
+        var numeros = new Array(1,2,3,4,5);
+        console.log(numeros);
+        imprimirResultado(numeros[4]+ "<hr>");
+        /* atividade 2*/ 
+       var numeros = new Array(3,8,12,7,10,15);
+       let soma =0;
+        
+        numeros.forEach(item => {
+            if (item %2 == 0){
+
+                soma ++;
+            }
+        });
+             pares =soma;
+            imprimirResultado("A soma é "+pares+"<hr>");
+        
+        /*atividade 3*/
+        var numeros = new Array(2,4,6,8);
+
+       let quadrado = numeros.map(function(numero){
+        return numero*numero;
+        });
+           
+            imprimirResultado(quadrado + "<hr>");
+       /*atividade 4*/
+        var nomes = new Array('Alice','Bruno','Carla');
+        let frases = nomes.map(function(frase){
+            return `Ola, ${frase} <br>`;
+        });
+            imprimirResultado( frases + "<hr>");
+        
+        /*atividade 5*/
+        var numeros = new Array(5,12,18,7,9,14);
+
+        let filtros = numeros.filter(function(filtro){
+            return filtro >10;
+        });
+            imprimirResultado(filtros);
+            
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

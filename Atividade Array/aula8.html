@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>array</title>
+</head>
+ 
+<body>
+    <script>
+        let fruta = "maçã";
+ 
+        //usando colchetes
+        let frutas = ["maça", "banana", "tomate"];
+ 
+        //usando o construtor arrry
+        let numeros = new Array(1, 5, 7, 9, 8);
+        console.log(frutas);
+ 
+        //acessando os array
+        console.log(frutas[1]);
+ 
+        //substituir item no array
+        frutas[0] = "Manga";
+        console.log(frutas);
+ 
+        //adicionar um item final no array
+        frutas.push("pera");
+        console.log(frutas)
+ 
+        //remover o ultimo item
+        frutas.pop();
+        console.log(frutas);
+ 
+        //remover o primeiro item
+        frutas.shift();
+        console.log(frutas)
+ 
+        //adiciona o primeiro item
+        frutas.unshift("Melancia");
+        console.log(frutas);
+ 
+        //retornar a quantidade de itens do arrray
+        console.log(frutas.length);
+ 
+        //imprimir itens do array
+        for (let i = 0; i < frutas.length; i++) {
+            console.log(frutas[i]);
+        }
+        frutas.forEach(function(item){
+            console.log(item);
+        })
+        let Novalistafrutas = frutas.map(function(item){
+            if (item == "Melancia") {
+                return item.toUpperCase()
+ 
+            }
+            return item;
+        })
+            //ifternary reduz o if em apenas uma unica linha, caso ouver mais por exemplo if e else não funciona
+           
+            //return (item == "Melancia") ? item.toUpperCase() :item;
+ 
+        console.log(Novalistafrutas)
+ 
+    </script>
+</body>
+ 
+</html>
