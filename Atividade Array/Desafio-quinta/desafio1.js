@@ -1,20 +1,37 @@
-function criarMultiplos(x,n){ //criamos a função para ela ser chamada ao apertar o botão no html
+function criarMultiplos(x, n) {
+  x = parseInt(x);  // Converte o valor inicial para número
+  n = parseInt(n);  // Converte o valor final para número
 
-    //criamos variáveis para armazenar os elementos do html
-let x = (document.getElementById('numeroinicial').value); //transformamos as strings em valores
-let n = (document.getElementById('numerofinal').value);
-let resultado = document.getElementById('resultado');
-
-
+  const multiplos = []; // Criamos um array vazio para armazenar os valores
+  for (let i = x; i <= n; i++) { // Fazemos o loop de x até n
+      multiplos.push(i); // Adicionamos os elementos do loop no array
+  }
+  return multiplos;
+}
  
+//////////////////////////////////////Desafio2////////////////////////
 
-const multiplos =[]; //criamos um array vazio para armazenar os novos valores
-   for (let i=x; i<=n;i++){ //fazemos o loop
-    multiplos.push(i); //adicionamos elementos do loop no array vazio.
-   }
+function elevarAoQuadrado(arr){
+     resultados = arr;
+     arr.map(numero => {
+   numero*numero;
+     })
+}
+
+function enviarFormulario() {
+  // Criamos variáveis para armazenar os elementos do HTML
+  let numeroInicial = document.getElementById('numeroinicial').value;
+  let numeroFinal = document.getElementById('numerofinal').value;
+  let resultado = document.getElementById('resultado');
+  let resultado1 = document.getElementById('resultado1');
+
+  // Chamamos a função criarMultiplos com os valores fornecidos pelo usuário
+  const resultados = criarMultiplos(numeroInicial, numeroFinal);
+  const resultados2 = elevarAoQuadrado(resultados)
+
+  // Exibimos o resultado no elemento de resultado, formatado como string
+  resultado.textContent = resultados.join(', ');
+  resultado1.textContent = resultados2.join(',');
 
 
-   multiplos.forEach(num => { //imprimimos os novos elementos
-     resultado.textContent +=`${num},`;//concatenamos os valores na variavel  resultado que tem relação com o id (resultado) do html
-   })
-};
+}
