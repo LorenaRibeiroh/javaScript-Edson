@@ -13,7 +13,7 @@ function criarMultiplos(x, n) {
 
 function elevarAoQuadrado(arr){
      resultados = arr;
-     arr.map(numero => {
+     return arr.map(numero => {
    numero*numero;
      })
 }
@@ -23,7 +23,7 @@ function enviarFormulario() {
   let numeroInicial = document.getElementById('numeroinicial').value;
   let numeroFinal = document.getElementById('numerofinal').value;
   let resultado = document.getElementById('resultado');
-  let resultado1 = document.getElementById('resultado1');
+  let resultado2 = document.getElementById('resultado2');
 
   // Chamamos a função criarMultiplos com os valores fornecidos pelo usuário
   const resultados = criarMultiplos(numeroInicial, numeroFinal);
@@ -31,7 +31,7 @@ function enviarFormulario() {
 
   // Exibimos o resultado no elemento de resultado, formatado como string
   resultado.textContent = resultados.join(', ');
-  resultado1.textContent = resultados2.join(',');
+  resultado2.textContent = resultados2.join(',');
 
 
 }
