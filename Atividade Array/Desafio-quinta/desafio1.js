@@ -3,7 +3,7 @@ function criarMultiplos(x, n) {
   n = parseInt(n);  // Converte o valor final para número
 
   const multiplos = []; // Criamos um array vazio para armazenar os valores
-  for (let i = x; i <= n; i++) { // Fazemos o loop de x até n
+  for (let i = x; i <= n; i+=i) { // Fazemos o loop de x até n
       multiplos.push(i); // Adicionamos os elementos do loop no array
   }
   return multiplos;
@@ -25,6 +25,7 @@ function enviarFormulario() {
 
   // Chamamos a função criarMultiplos com os valores fornecidos pelo usuário
   const resultados = criarMultiplos(x, n);
+  //chamamos a função elevarAoQuadrado com os valores do array criarMultiplos
   const resultados2 = elevarAoQuadrado(resultados);
 
   // Exibimos o resultado no elemento de resultado, formatado como string
