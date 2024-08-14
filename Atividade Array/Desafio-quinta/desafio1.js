@@ -20,13 +20,13 @@ function elevarAoQuadrado(arr){
 
 function enviarFormulario() {
   // Criamos variáveis para armazenar os elementos do HTML
-  let numeroInicial = document.getElementById('numeroinicial').value;
-  let numeroFinal = document.getElementById('numerofinal').value;
+  let x = document.getElementById('numeroinicial').value;
+  let n = document.getElementById('numerofinal').value;
   let resultado = document.getElementById('resultado');
   let resultado2 = document.getElementById('resultado2');
 
   // Chamamos a função criarMultiplos com os valores fornecidos pelo usuário
-  const resultados = criarMultiplos(numeroInicial, numeroFinal);
+  const resultados = criarMultiplos(x, n);
   const resultados2 = elevarAoQuadrado(resultados)
 
   // Exibimos o resultado no elemento de resultado, formatado como string
