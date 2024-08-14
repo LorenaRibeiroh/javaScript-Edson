@@ -12,9 +12,8 @@ function criarMultiplos(x, n) {
 //////////////////////////////////////Desafio2////////////////////////
 
 function elevarAoQuadrado(arr){
-     return arr.map(numero => {
-   numero*numero;
-     })
+     return arr.map(numero => 
+   numero*numero);
 }
 
 function enviarFormulario() {
