@@ -26,7 +26,7 @@ function enviarFormulario() {
 
   // Chamamos a função criarMultiplos com os valores fornecidos pelo usuário
   const resultados = criarMultiplos(x, n);
-  const resultados2 = elevarAoQuadrado(arr);
+  const resultados2 = elevarAoQuadrado(resultados);
 
   // Exibimos o resultado no elemento de resultado, formatado como string
   resultado.textContent = resultados.join(', ');
