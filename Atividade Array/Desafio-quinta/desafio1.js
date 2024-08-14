@@ -58,7 +58,7 @@ function enviarFormulario() {
   const MultiplosTres = MultiplosDeTres(quadrados);
 
 
-  // Exibimos o resultado no elemento de resultado, formatado como string
+  // Exibimos o resultado no elemento de resultado, formatado como string/
   resultado.textContent = resultados.join(', ') ;
   resultado2.textContent = quadrados.join(',') ;
   resultado3.textContent = maioresQue20;
