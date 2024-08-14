@@ -23,11 +23,11 @@ function enviarFormulario() {
   let x = document.getElementById('numeroinicial').value;
   let n = document.getElementById('numerofinal').value;
   let resultado = document.getElementById('resultado');
-  let resultado2 = document.getElementById('resultado2');
+  let resultado2 = document.getElementById('resultado');
 
   // Chamamos a função criarMultiplos com os valores fornecidos pelo usuário
   const resultados = criarMultiplos(x, n);
-  const resultados2 = elevarAoQuadrado(resultados)
+  const resultados2 = elevarAoQuadrado(resultados);
 
   // Exibimos o resultado no elemento de resultado, formatado como string
   resultado.textContent = resultados.join(', ');
