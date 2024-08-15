@@ -40,16 +40,16 @@
 
 
         function somarPares(arr) {
-            return arr.filter(numero => numero % 2 === 0).reduce((soma, numero) => soma + numero, 0);
+            return arr.filter(numero => numero % 2 === 0).reduce((soma, numero) => soma + numero, 0); 
         }
 
 
         function pares() {
-            let x = document.getElementById('numeroinicial4').value;
+            let x = document.getElementById('numeroinicial4').value; 
             let n = document.getElementById('numerofinal4').value;
             let resultado4 = document.getElementById('resultado4');
             const resultados = criarMultiplos(x, n);
-            const quadrados = elevarAoQuadrado(resultados);
+            const quadrados = elevarAoQuadrado(resultados); //depende da const resultado que armazena os valores da função criarMultiplos e assim vai
             const somaPares = somarPares(quadrados);
             resultado4.textContent = somaPares;
         }
