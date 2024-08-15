@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
 
+
 *{
     font-family: 'New Amsterdam ' , sans-serif;
     box-sizing: border-box;
@@ -19,6 +20,7 @@ body{
     background: rgb(117, 171, 207);
     border-radius: 20px;
     padding-top: 10px;
+    box-shadow: 5px 10px 15px rgb(96, 96, 100);
 }
 button{
     margin-top: 10px;

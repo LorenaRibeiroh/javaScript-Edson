@@ -48,8 +48,10 @@
             let x = document.getElementById('numeroinicial4').value; 
             let n = document.getElementById('numerofinal4').value;
             let resultado4 = document.getElementById('resultado4');
-            const resultados = criarMultiplos(x, n);
-            const quadrados = elevarAoQuadrado(resultados); //depende da const resultado que armazena os valores da função criarMultiplos e assim vai
+            const resultados = criarMultiplos(x, n); //armazena a função e os valores que ela possui
+
+            const quadrados = elevarAoQuadrado(resultados); //valores irao substitui o arr e fazer a conta
+
             const somaPares = somarPares(quadrados);
             resultado4.textContent = somaPares;
         }

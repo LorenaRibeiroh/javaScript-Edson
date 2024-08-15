@@ -23,30 +23,30 @@
        
     </div>
     <script>
-        function criarMultiplos(x, n) {
+        function criarMultiplos(x, n) { //2,8
             x = parseInt(x);
             n = parseInt(n);
             const multiplos = [];
-            for (let i = x; i <= n; i += x) {
-                multiplos.push(i);
+            for (let i = x; i <= n; i += x) { //temos que somar o numero inicial 2 + ele mesmo até o numero final 8
+                multiplos.push(i); //irá acrescentar esses numeros novos que obtivemos no array que antes estava vazio
             }
-            return multiplos;
+            return multiplos; 
         }
 
         function elevarAoQuadrado(arr) {
-            return arr.map(numero => numero * numero);
+            return arr.map(numero => numero * numero); //mapea e pegar os cada numero e multiplica ele mesmo
         }
 
         function contarMaioresQue20(arr) {
-            return arr.filter(numero => numero > 20).length;
+            return arr.filter(numero => numero > 20).length; //length irá contar quantos numeros maiores que 20 tem
         }
 
         function Maior() {
             let x = document.getElementById('numeroinicial3').value;
             let n = document.getElementById('numerofinal3').value;
             let resultado3 = document.getElementById('resultado3');
-            const resultados = criarMultiplos(x, n);
-            const quadrados = elevarAoQuadrado(resultados);
+            const resultados = criarMultiplos(x, n); //armazena a função e os valores que ela possui
+            const quadrados = elevarAoQuadrado(resultados); //valores irao substitui o arr e fazer a conta
             const maioresQue20 = contarMaioresQue20(quadrados);
             resultado3.textContent = maioresQue20;
         }
