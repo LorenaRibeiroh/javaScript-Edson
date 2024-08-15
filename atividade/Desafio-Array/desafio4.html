@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio4</title>
+</head>
+
+<body>
+    <div id="boxresultado">
+        <p><label for="numeroinicial4">Digite o número inicial:</label>
+            <input type="number" id="numeroinicial4" name="numeroinicial4">
+        </p>
+        <p>
+            <label for="numerofinal4">Digite o número final:</label>
+            <input type="number" id="numerofinal4" name="numerofinal4">
+        </p>
+        <p>
+            <button onclick="pares()">Enviar</button>
+        </p>
+        <p id="resultado4"></p>
+    </div>
+    <script>
+        function criarMultiplos(x, n) {
+            x = parseInt(x);
+            n = parseInt(n);
+            const multiplos = [];
+            for (let i = x; i <= n; i += x) {
+                multiplos.push(i);
+            }
+            return multiplos;
+        }
+
+
+        function elevarAoQuadrado(arr) {
+            return arr.map(numero => numero * numero);
+        }
+
+
+        function somarPares(arr) {
+            return arr.filter(numero => numero % 2 === 0).reduce((soma, numero) => soma + numero, 0);
+        }
+
+
+        function pares() {
+            let x = document.getElementById('numeroinicial4').value;
+            let n = document.getElementById('numerofinal4').value;
+            let resultado4 = document.getElementById('resultado4');
+            const resultados = criarMultiplos(x, n);
+            const quadrados = elevarAoQuadrado(resultados);
+            const somaPares = somarPares(quadrados);
+            resultado4.textContent = somaPares;
+        }
+
+
+    </script>
+</body>
+
+</html>

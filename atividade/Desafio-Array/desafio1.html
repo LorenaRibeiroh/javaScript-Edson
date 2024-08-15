@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio1</title>
+</head>
+
+<body>
+    <div id="boxresultado">
+        <p><label for="numeroinicial">Digite o número inicial:</label> <input type="number" id="numeroinicial"
+                name="numeroinicial"></p>
+        <p> <label for="numerofinal">Digite o número final:</label> <input type="number" id="numerofinal"
+                name="numerofinal"> </p>
+        <p> <button onclick="enviarFormulario()">Enviar</button> </p>
+        <p id="resultado"></p>
+    </div>
+    <script> function criarMultiplos(x, n) {
+            x = parseInt(x); n = parseInt(n);
+            const multiplos = [];
+            for (let i = x; i <= n; i += x) {
+                multiplos.push(i);
+            } return multiplos;
+        } function enviarFormulario() {
+            let x = document.getElementById('numeroinicial').value;
+            let n = document.getElementById('numerofinal').value;
+            let resultado = document.getElementById('resultado');
+            const resultados = criarMultiplos(x, n);
+            resultado.textContent = resultados.join(', ');
+        } 
+    </script>
+</body>
+
+</html>

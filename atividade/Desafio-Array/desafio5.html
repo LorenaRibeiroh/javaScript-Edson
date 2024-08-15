@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio5</title>
+</head>
+
+<body>
+    <div id="boxresultado">
+        <p><label for="numeroinicial5">Digite o número inicial:</label>
+            <input type="number" id="numeroinicial5" name="numeroinicial5">
+        </p>
+        <p>
+            <label for="numerofinal5">Digite o número final:</label>
+            <input type="number" id="numerofinal5" name="numerofinal5">
+        </p>
+        <p>
+            <button onclick="multiplos()">Enviar</button>
+        </p>
+        <p id="resultado5"></p>
+    </div>
+    <script>
+        function criarMultiplos(x, n) {
+            x = parseInt(x);
+            n = parseInt(n);
+            const multiplos = [];
+            for (let i = x; i <= n; i += x) {
+                multiplos.push(i);
+            }
+            return multiplos;
+        }
+
+
+        function elevarAoQuadrado(arr) {
+            return arr.map(numero => numero * numero);
+        }
+
+
+        function MultiplosDeTres(arr) {
+            const multiplos = arr.filter(num => num % 3 === 0);
+            return multiplos.length > 0 ? 'true' : 'false';
+        }
+
+
+        function multiplos() {
+            let x = document.getElementById('numeroinicial5').value;
+            let n = document.getElementById('numerofinal5').value;
+            let resultado5 = document.getElementById('resultado5');
+            const resultados = criarMultiplos(x, n);
+            const quadrados = elevarAoQuadrado(resultados);
+            const MultiplosTres = MultiplosDeTres(quadrados);
+            resultado5.textContent = MultiplosTres;
+        }
+
+
+    </script>
+</body>
+
+</html>

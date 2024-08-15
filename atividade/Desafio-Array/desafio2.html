@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio2</title>
+</head>
+
+<body>
+    <div id="boxresultado">
+        <p><label for="numeroinicialquadrado">Digite o número inicial:</label>
+            <input type="number" id="numeroinicialquadrado" name="numeroinicialquadrado">
+        </p>
+        <p>
+            <label for="numerofinalquadrado">Digite o número final:</label>
+            <input type="number" id="numerofinalquadrado" name="numerofinalquadrado">
+        </p>
+        <p>
+            <button onclick="gerarAoQuadrado()">Enviar</button>
+        </p>
+        <p id="resultado2"></p>
+    </div>
+    <script>
+        function criarMultiplos(x, n) {
+            x = parseInt(x);
+            n = parseInt(n);
+            const multiplos = [];
+            for (let i = x; i <= n; i += x) {
+                multiplos.push(i);
+            }
+            return multiplos;
+        }
+
+        function elevarAoQuadrado(arr) {
+            return arr.map(numero => numero * numero);
+        }
+
+        function gerarAoQuadrado() {
+            let x = document.getElementById('numeroinicialquadrado').value;
+            let n = document.getElementById('numerofinalquadrado').value;
+            let resultado2 = document.getElementById('resultado2');
+            const resultados = criarMultiplos(x, n);
+            const quadrados = elevarAoQuadrado(resultados);
+            resultado2.textContent = quadrados.join(', ');
+        }
+
+    </script>
+</body>
+
+</html>

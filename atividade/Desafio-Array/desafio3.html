@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio3</title>
+</head>
+
+<body>
+    <div id="boxresultado">
+        <p><label for="numeroinicial3">Digite o número inicial:</label>
+            <input type="number" id="numeroinicial3" name="numeroinicial3">
+        </p>
+        <p>
+            <label for="numerofinal3">Digite o número final:</label>
+            <input type="number" id="numerofinal3" name="numerofinal3">
+        </p>
+        <p>
+            <button onclick="Maior()">Enviar</button>
+        </p>
+        <p id="resultado3"></p>
+    </div>
+    <script>
+        function criarMultiplos(x, n) {
+            x = parseInt(x);
+            n = parseInt(n);
+            const multiplos = [];
+            for (let i = x; i <= n; i += x) {
+                multiplos.push(i);
+            }
+            return multiplos;
+        }
+
+        function elevarAoQuadrado(arr) {
+            return arr.map(numero => numero * numero);
+        }
+
+        function contarMaioresQue20(arr) {
+            return arr.filter(numero => numero > 20).length;
+        }
+
+        function Maior() {
+            let x = document.getElementById('numeroinicial3').value;
+            let n = document.getElementById('numerofinal3').value;
+            let resultado3 = document.getElementById('resultado3');
+            const resultados = criarMultiplos(x, n);
+            const quadrados = elevarAoQuadrado(resultados);
+            const maioresQue20 = contarMaioresQue20(quadrados);
+            resultado3.textContent = maioresQue20;
+        }
+
+    </script>
+</body>
+
+</html>
