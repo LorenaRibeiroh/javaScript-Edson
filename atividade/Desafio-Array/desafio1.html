@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>Desafio1</title>
 </head>
@@ -13,7 +14,8 @@
         <p> <label for="numerofinal">Digite o número final:</label> <input type="number" id="numerofinal"
                 name="numerofinal"> </p>
         <p> <button onclick="enviarFormulario()">Enviar</button> </p>
-        <p id="resultado"></p>
+        <div class="result"><p id="resultado"></p></div>
+        
     </div>
     <script> function criarMultiplos(x, n) {
             x = parseInt(x); n = parseInt(n);
