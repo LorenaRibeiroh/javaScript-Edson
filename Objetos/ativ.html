@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //criando um objeto de produto
+
+        //crie um objeto que reprente um produto em uma loja (por exemplo,um celular)
+        //cada objeto deve ter propriedade como nome,preço,marca,e em estoque
+        //acesse e modifique as propredades do objeto,e adicionar pelo menos uma nova propriedade,delete uma propriedade da sua escolha
+
+        let jogos ={
+            nome: "Roblox",
+            preço: "Grátis",
+            marca: "Roblox",
+            estoque:"infinito",
+            jogar :function(){
+                console.log(` O ${this.nome} esta começando`);
+                console.log(`O Roblox é ${this.preço}`);
+                console.log(`O roblox é da marca ${this.marca}`);
+                console.log(`O roblox tem o estoque ${this.estoque}`);
+            }
+        }
+        jogos.jogar();
+        console.log(jogos.nome,jogos.preço,jogos.marca,jogos.estoque);
+
+        jogos.nome = "minecraft";
+        console.log(jogos.nome);
+
+        jogos.genero = "terror,ação,suspense";
+        console.log(jogos.genero);
+
+        delete jogos.estoque;
+        console.log(jogos);
+
+
+    </script>
+</body>
+</html>

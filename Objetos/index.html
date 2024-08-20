@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de JS</title>
+</head>
+<body>
+    <script>
+        //array só valores
+        //objeto chaves e valores 
+        let pessoa = {
+            nome : "Lorena",
+            idade: 3,
+            profissão: "Ricona",
+            salario: 100.000,
+        }
+        //acessando dados de um projeto
+        console.log(pessoa);
+        console.log(pessoa.nome,pessoa.idade);
+        console.log(pessoa['salario']);
+
+        //Modificando dados de uma propriedade
+        pessoa.idade = 30;
+        console.log(pessoa);
+
+        //adicionar um nova propriedade
+        pessoa.genero ="mutante";
+        console.log(pessoa);
+
+        //remover propriedade
+        delete pessoa.salario;
+        console.log(pessoa);
+
+        //métodos de um objeto
+        let carro={
+            marca : "Toyota",
+            modelo : "Corolla",
+            ano : 2020, //propriedade
+            ligar: function (){ //metodo
+              console.log(`O carro ${this.marca}está ligado`);
+            }
+        }
+        carro.ligado();
+    </script>
+</body>
+</html>
