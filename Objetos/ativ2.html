@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let aluno ={
+        nome:"Lorena Ribeiro",
+        idade:41,
+        curso: "programação",
+        notas: [8,9,5,9,8.5],
+       }
+       console.log("O nome do aluno é,",aluno.nome);
+  
+        //aluno.notas.reduce((numeros,soma) => numeros+soma,0)//
+
+        aluno.notas.forEach( numeros => {
+            numeros;
+            console.log("E suas notas são:",aluno.notas.join(","));
+        });
+       const media =aluno.notas.reduce((numero,soma) => numero+soma,0)
+       console.log("sua média é:",media/aluno.notas.length);
+
+       //metodo calcularMedia() no objeto aluno
+       let alunoB ={
+        nome:"Lorena Ribeiro",
+        idade:41,
+        curso: "programação",
+        notas: [8,9,5,9,8.5],
+        calcularmedia:function(){
+            let soma =0;
+            this.notas.forEach(function(nota){
+                soma += nota;
+            });
+            return soma/this.notas.length;
+        }
+       }
+       console.log(alunoB.nome+" tem a média de:"+alunoB.calcularmedia());
+
+       //Lista de estudante
+
+       let estudante=[
+        {
+            nome: "Lorena ribeiro",
+            idade:41,
+            curso:"photoshop",
+        },
+        {
+            nome: "Marlene",
+            idade:30,
+            curso:"advogada",
+        },
+        {
+            nome: "Ana Laura",
+            idade:15,
+            curso:"Youtuber",
+        },
+       ];
+       estudantes.forEach(estudante => {
+        console.log(estudante.nome);
+       });
+    </script>
+</body>
+</html>
